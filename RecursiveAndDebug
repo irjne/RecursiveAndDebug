@@ -1,0 +1,29 @@
+package recursiveanddebug;
+
+public class RecursiveAndDebug 
+{
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) 
+    {
+        int factorial = factorial(5,5);
+        System.out.println("factorial: "+factorial);
+    }
+    
+    
+    public static int factorial (int value, int sum) 
+    {
+        if (value==1) //toggle line breakpoint
+        {
+            return sum;
+        }
+        else
+        {
+            sum*=value*(value-1);
+            return RecursiveAndDebug.factorial(value-1, sum);
+        }
+    }
+    
+}
